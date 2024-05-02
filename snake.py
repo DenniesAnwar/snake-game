@@ -38,7 +38,13 @@ class Snake:
         self.segments.append(new_tail)
         self.tail = self.segments[self.size_of_snake - 1]
 
-
+    def reset(self):
+        # To remove off the screen
+        for segments in self.segments:
+            segments.goto(1000,1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
 
 
 
